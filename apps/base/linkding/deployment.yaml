@@ -34,11 +34,12 @@ spec:
                 - ALL
           resources:
             limits:
-              memory: "300Mi"
-              cpu: "300m"
+              memory: "512Mi"
+              cpu: "500m"
             requests:
-              memory: "100Mi"
-              cpu: "100m"
+              memory: "200Mi"
+              cpu: "150m"
       volumes:
         - name: linkding-data
-          emptyDir: {}
+          persistentVolumeClaim:
+            claimName: linkding-data
